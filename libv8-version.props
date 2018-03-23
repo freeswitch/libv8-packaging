@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="basedir.props" Condition=" '$(BaseDirImported)' == ''"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <libv8Version>6.1.298</libv8Version>
+    <libv8BuildWithMSVSVersion>2015</libv8BuildWithMSVSVersion>
+    <libv8LibDir>$(BaseDir)libv8-$(libv8Version)</libv8LibDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <libv8VersionImported>true</libv8VersionImported>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="libv8Version">
+      <Value>$(libv8Version)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
