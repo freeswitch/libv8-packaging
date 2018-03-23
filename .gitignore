@@ -1,5 +1,5 @@
 depot_tools/*
 out/*
-v8*
+v8/
 .gclient*
 depot_tools*
