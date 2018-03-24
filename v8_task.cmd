@@ -48,7 +48,8 @@ If Not Exist "depot_tools" (
     call powershell -command "& { Add-Type -AssemblyName System.IO.Compression.FileSystem; function Unzip { param([string]$zipfile, [string]$outpath);     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)}; Unzip "depot_tools.zip" "depot_tools" }"
 )
 
-set GYP_MSVS_VERSION=%libv8BuildWithMSVSVersion%
+echo Use default GYP_MSVS_VERSION when fetching V8 because master's default settings may not support our version
+echo Current GYP_MSVS_VERSION=%GYP_MSVS_VERSION%
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 set PATH=%CD%\depot_tools;%PATH%
 
@@ -64,11 +65,14 @@ If Exist "v8" (
     cd v8
     echo call git checkout %libv8version%
     call git checkout %libv8version%
+    echo Set GYP_MSVS_VERSION to %libv8BuildWithMSVSVersion%
+    set GYP_MSVS_VERSION=%libv8BuildWithMSVSVersion%
+    echo Current GYP_MSVS_VERSION=%GYP_MSVS_VERSION% after checkout
     call gclient sync
 )
 
 If Not Exist "out.gn/%libv8platform%.%libv8configuration%%static%" (
-    call python tools/dev/v8gen.py gen -b %libv8platform%.%libv8configuration% %libv8platform%.%libv8configuration%%static% %arguments%
+    call python tools/dev/v8gen.py gen -vv -b %libv8platform%.%libv8configuration% %libv8platform%.%libv8configuration%%static% %arguments%
     call ninja -C out.gn/%libv8platform%.%libv8configuration%%static% d8
 )
 
