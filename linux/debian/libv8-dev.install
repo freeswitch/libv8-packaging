@@ -1,0 +1,3 @@
+debian/tmp/opt_include/libv8fs-*/include/* usr/include/v8fs
+debian/v8fs.pc usr/lib/pkgconfig/
+debian/v8fs_static.pc usr/lib/pkgconfig/

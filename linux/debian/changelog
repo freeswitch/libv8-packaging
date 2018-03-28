@@ -1,0 +1,6 @@
+PKG_NAME (GIT_VERSION-BUILD_VERSION~DISTRO) DISTRO; urgency=medium
+
+  * New version based on GIT_VERSION
+    (https://chromium.googlesource.com/v8/v8.git)
+
+ -- DEB_FULL_NAME <DEB_EMAIL>  DATE

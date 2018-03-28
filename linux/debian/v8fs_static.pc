@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/v8fs
+includedir=${prefix}/include/v8fs
+
+Name: v8
+Description: V8 JavaScript Engine
+Version: GIT_VERSION
+Libs: -lrt -ldl -Wl,--start-group ${libdir}/libv8_base.a ${libdir}/libv8_libplatform.a ${libdir}/libv8_libbase.a ${libdir}/libv8_snapshot.a ${libdir}/libv8_libsampler.a ${libdir}/src/inspector/libinspector.a -Wl,--end-group
+Cflags: -I${includedir}
