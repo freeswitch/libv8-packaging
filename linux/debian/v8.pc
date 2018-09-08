@@ -1,7 +1,7 @@
 prefix=/usr
 exec_prefix=${prefix}
-libdir=${prefix}/lib/v8fs
-includedir=${prefix}/include/v8fs
+libdir=${prefix}/lib/v8
+includedir=${prefix}/include/v8
 
 Name: v8
 Description: V8 JavaScript Engine

@@ -1,1 +1,1 @@
-debian/tmp/opt_lib/libv8fs-*/lib/* usr/lib/v8fs
+debian/tmp/opt_lib/libv8-*/lib/* usr/lib/v8

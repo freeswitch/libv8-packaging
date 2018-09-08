@@ -1,6 +1,6 @@
 Source: PKG_NAME
 Priority: optional
-Maintainer: DEB_FULL_NAME <DEB_EMAIL>
+Maintainer: FreeSWITCH Solutions <packages@freeswitch.com>
 Build-Depends: cdbs, git, libglib2.0-dev, python2.7, pkg-config
 Standards-Version: 3.9.6
 Section: libs
