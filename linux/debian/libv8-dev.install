@@ -1,3 +1,3 @@
-debian/tmp/opt_include/libv8-*/include/* usr/include/v8
-debian/v8.pc usr/lib/pkgconfig/
-debian/v8_static.pc usr/lib/pkgconfig/
+debian/tmp/opt_include/libv8-*/include/* usr/include/v8-6.1
+debian/v8-6.1.pc usr/lib/pkgconfig/
+debian/v8-6.1_static.pc usr/lib/pkgconfig/
