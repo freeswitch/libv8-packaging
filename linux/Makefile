@@ -4,8 +4,11 @@ GIT_URL=https://chromium.googlesource.com/v8/v8.git
 # Tag name or commit hash for checkout
 GIT_VERSION=6.1.298
 
+# Short version
+SHORT_VERSION=6.1
+
 # Package name
-NAME=libv8-6.1
+NAME=libv8-$(SHORT_VERSION)
 
 # Package version
 VERSION=$(GIT_VERSION)
@@ -68,8 +71,8 @@ _build: distro
 	cd "${BUILD_DIR}/${NAME}_${VERSION}" ; \
 	NEW_VER="${VERSION}-${BUILD_VERSION}~${DISTR}"; \
 	rm -Rf debian ; cp -r ../../debian . ; \
-	sed -i -e "s/GIT_VERSION/${GIT_VERSION}/g" debian/v8.pc ; \
-	sed -i -e "s/GIT_VERSION/${GIT_VERSION}/g" debian/v8_static.pc ; \
+	sed -i -e "s/GIT_VERSION/${GIT_VERSION}/g" debian/v8-$(SHORT_VERSION).pc ; \
+	sed -i -e "s/GIT_VERSION/${GIT_VERSION}/g" debian/v8-$(SHORT_VERSION)_static.pc ; \
 	sed -i -e "s/DISTRO/${DISTR}/g" debian/changelog ; \
 	sed -i -e "s/BUILD_VERSION/${BUILD_VERSION}/g" debian/changelog ; \
 	sed -i -e "s/GIT_VERSION/${GIT_VERSION}/g" debian/changelog ; \
