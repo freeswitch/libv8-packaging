@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+PHONY += clean
+
+NPROCS:=$(shell grep -c ^processor /proc/cpuinfo)
+
+clean:
+
+arm64.release:
+	cd v8 ; \
+	gn gen out.gn/arm64.release --args='is_debug=true v8_static_library=true is_component_build=false v8_enable_i18n_support=false v8_use_external_startup_data=false target_cpu="arm64" v8_target_cpu="arm64"' ; \
+	gn args out.gn/arm64.release --list > out.gn/arm64.release/gn_args.txt ; \
+	ninja -j $(NPROCS) -v d8 -C out.gn/arm64.release || true ; \

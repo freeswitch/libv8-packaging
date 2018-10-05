@@ -1,0 +1,37 @@
+Source: PKG_NAME
+Priority: optional
+Maintainer: FreeSWITCH Solutions <packages@freeswitch.com>
+Build-Depends: cdbs, git, libglib2.0-dev, python2.7, pkg-config
+Standards-Version: 3.9.6
+Section: libs
+Homepage: https://developers.google.com/v8/
+
+Package: PKG_NAME
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: V8 JavaScript engine - runtime library
+ V8 is a high performance JavaScript engine written in C++.
+ It is used in the web browser Chromium.
+ .
+ This package provides libraries for V8.
+
+Package: PKG_NAME-dev
+Section: libdevel
+Architecture: amd64
+Depends: PKG_NAME (= ${binary:Version}), ${misc:Depends}
+Description: V8 JavaScript engine - development files for GIT_VERSION
+ V8 is a high performance JavaScript engine written in C++.
+ It is used in the web browser Chromium.
+ .
+ This package provide development headers for V8 GIT_VERSION.
+
+Package: PKG_NAME-dbg
+Priority: extra
+Section: debug
+Architecture: amd64
+Depends: PKG_NAME (= ${binary:Version}), ${misc:Depends}
+Description: V8 JavaScript engine - debugging symbols
+ V8 is a high performance JavaScript engine written in C++.
+ It is used in the web browser Chromium.
+ .
+ This package provides the debugging symbols for the library.
