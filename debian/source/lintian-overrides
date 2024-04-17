@@ -1,0 +1,2 @@
+source: source-is-missing *
+libv8-6.1-dev: pkg-config-unavailable-for-cross-compilation [usr/lib/pkgconfig/v8-6.1_static.pc]

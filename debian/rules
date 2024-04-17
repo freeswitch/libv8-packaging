@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+BIN_PACKAGE_NAME := libv8-6.1
+DEV_PACKAGE_NAME := libv8-6.1-dev
+V8_INCLUDE_DIR := v8/include
+V8_OUT_RELEASE_DIR := v8/out.gn
+
+%:
+	dh $@
+
+override_dh_update_autotools_config:
+	# Override dh_update_autotools_config to do nothing
+
+override_dh_autoreconf:
+	# Override dh_autoreconf to do nothing
+
+override_dh_auto_build:
+	# Override dh_auto_build to do nothing
+
+override_dh_auto_test:
+	# Override dh_auto_test to do nothing
+
+override_dh_strip:
+	# Override dh_strip to do nothing
+
+override_dh_install:
+	dh_install -p$(DEV_PACKAGE_NAME) debian/v8-6.1_static.pc usr/lib/pkgconfig/
+	dh_install -p$(DEV_PACKAGE_NAME) $(V8_INCLUDE_DIR)/*.h usr/include/v8-6.1/
+	dh_install -p$(DEV_PACKAGE_NAME) $(V8_INCLUDE_DIR)/libplatform/*.h usr/include/v8-6.1/libplatform/
+	dh_install -p$(DEV_PACKAGE_NAME) $(V8_OUT_RELEASE_DIR)/gn_args.txt usr/include/v8-6.1/
+
+	dh_install -p$(BIN_PACKAGE_NAME) $(V8_OUT_RELEASE_DIR)/d8 usr/lib/v8-6.1/
+	dh_install -p$(BIN_PACKAGE_NAME) $(V8_OUT_RELEASE_DIR)/obj/*.a usr/lib/v8-6.1/
+	dh_install -p$(BIN_PACKAGE_NAME) $(V8_OUT_RELEASE_DIR)/obj/src/inspector/*.a usr/lib/v8-6.1/src/inspector/
+
+	dh_install
