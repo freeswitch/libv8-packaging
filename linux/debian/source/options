@@ -1,2 +1,0 @@
-extend-diff-ignore = ".*\.pyc$"
-extend-diff-ignore = "v8/out.gn/.*"

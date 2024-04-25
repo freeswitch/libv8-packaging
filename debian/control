@@ -1,0 +1,25 @@
+Source: libv8-6.1
+Priority: optional
+Maintainer: FreeSWITCH Solutions <packages@freeswitch.com>
+Standards-Version: 3.9.6
+Section: libs
+Homepage: https://developers.google.com/v8/
+
+Package: libv8-6.1
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: V8 JavaScript engine - runtime library
+ V8 is a high performance JavaScript engine written in C++.
+ It is used in the web browser Chromium.
+ .
+ This package provides libraries for V8.
+
+Package: libv8-6.1-dev
+Section: libdevel
+Architecture: amd64
+Depends: libv8-6.1 (= ${binary:Version}), ${misc:Depends}
+Description: V8 JavaScript engine - development files for 6.1.x
+ V8 is a high performance JavaScript engine written in C++.
+ It is used in the web browser Chromium.
+ .
+ This package provide development headers for V8 6.1.x.
